@@ -1,0 +1,9 @@
+psutil
+gputil
+tabulate
+environs
+streamz
+paho-mqtt
+black
+pydantic
+pytz
