@@ -105,8 +105,9 @@ def collect_hw_info(aa):
                 cpu_core_temps.append(psutil.sensors_temperatures()["coretemp"][i].current)
             cpu_mean_temp = sum(cpu_core_temps) / len(cpu_core_temps)
             # print("CPU temp mean:", (sum(cpu_core_temps) / len(cpu_core_temps)), "°C")
-        except:
+        except Exception as  e:
             LOGGER.warning("Failed to collect CPU temperature")
+            LOGGER.warning(f"Exception: {e}")
 
     # RAM 
     svmem = psutil.virtual_memory()
